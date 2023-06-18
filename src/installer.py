@@ -224,5 +224,10 @@ else:
         "sudo archinstall --silent --config ./user_configuration.json --creds ./user_credentials.json --disk_layouts ./user_disk_layout.json"
     )
 
-print("You can reboot now, if there were no errors.")
-print('To reboot run "reboot -h now"')
+print("chrooting into system, and proceeding to postinstall")
+
+mountargs = "sudo mount" + hard_drive + "/mnt/"
+
+os.system(mountargs)
+os.chroot(/mnt/)
+os.system("sudo curl https://raw.githubusercontent.com/Orange-OS-LE/installer/main/src/postinstall.py > postinstall.py && sudo python3 postinstall.py && rm postinstall.py")
