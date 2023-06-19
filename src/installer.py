@@ -18,6 +18,8 @@ This program is an installer for Orange OS LE 2, you can find more information i
 
 
 import sys, os
+from tkinter as tk
+window=tk
 
 hard_drive = ""
 host_name = ""
@@ -25,10 +27,19 @@ keyboard_layout = ""
 language = ""
 time_zone = ""
 location = ""
+page = 0
 
+def next():
+    page = page + 1
+def back():
+    page = page - 1
+
+window.geometry("640x480")
+window.title("Orange OS LE Installer")
+window.button
 
 def ui():
-    global hard_drive, host_name, keyboard_layout, language, time_zone, location
+    global hard_drive, host_name, keyboard_layout, language, time_zone, location, page
     print("Welcome to the Orange OS LE 2 install script.")
     print("We will ask you a few questions to make sure you get a great configuration.")
 
